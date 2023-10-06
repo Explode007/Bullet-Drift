@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddhv0dupd7lhh"]
+
+[ext_resource type="PackedScene" uid="uid://dvjbl0bn08hlr" path="res://Bullet/Player.tscn" id="1_i2xvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyt07"]
+size = Vector2(26.444, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysvoc"]
+size = Vector2(26.444, 1112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20sqq"]
+size = Vector2(26.444, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de7an"]
+size = Vector2(26.444, 1113.25)
+
+[node name="World" type="Node2D"]
+
+[node name="Bullet" parent="." instance=ExtResource("1_i2xvl")]
+position = Vector2(582.586, 514.888)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(13, 323.5)
+shape = SubResource("RectangleShape2D_tyt07")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(575, 634)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ysvoc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1136, 324)
+shape = SubResource("RectangleShape2D_20sqq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(579.625, 12)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_de7an")
